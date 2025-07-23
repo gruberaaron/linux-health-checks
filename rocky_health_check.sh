@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# #############################################################################
+#
+# Script Name:  rocky_health_check.sh
+# Author:       Aaron Gruber <aaron@gizmobear.io>
+# Date:         Jul 17, 2025
+# Version:      1.0
+#
+# Description:  Performs a comprehensive health and security check on a
+#               Rocky Linux system, covering security, system state,
+#               storage, packages, and networking. The output is saved to
+#               a report file in /tmp.
+#
+# Change Log:
+#
+#   1.0 - 2025-07-23 - Initial release.
+#
+# #############################################################################
+
 OUTPUT="/tmp/health_report.txt"
 > "$OUTPUT"
 
