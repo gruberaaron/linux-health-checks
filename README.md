@@ -1,12 +1,56 @@
-# linux scripts
+# Rocky Linux Health Check
 
+## Overview
 
+A comprehensive system health and security auditing tool for Rocky Linux systems. This Python script performs a series of checks covering security configurations, system state, storage utilization, package compliance, and networking settings.
 
-## Getting started
+Repository: https://gitlab.vaultcloud.xyz/aarongruber/linux-health-checks.git
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Features
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- **Security & Access Controls**: SELinux status, SSH configuration, user permissions
+- **System State & Health**: Uptime, load, memory usage, zombie processes, failed services
+- **Storage & Filesystem**: Space usage, inode utilization
+- **Package & Update Compliance**: Security updates, orphaned packages
+- **Networking**: Firewall status, listening ports, NTP synchronization, interface statistics
+- **iSCSI Diagnostics**: Sessions, device listings, system logs
+
+## Requirements
+
+- Rocky Linux (tested on 9.x)
+- Python 3.6+
+- Root privileges (for most checks)
+
+## Usage
+
+```bash
+# Run with root privileges
+sudo python3 rocky_health_check.py
+```
+
+The script will generate a comprehensive report in `/tmp/health_report.txt` while also displaying results to the console.
+
+## Output Format
+
+Each check is categorized into sections with a clear PASS/FAIL indicator:
+
+```
+===== SELinux Status =====
+Desired state: Enforcing
+Current state: Enforcing
+PASS: SELinux is enforcing.
+```
+
+## Design Features
+
+- Robust error handling with timeouts
+- Avoids shell injection vulnerabilities
+- Python logging system for reliable output
+- Comprehensive exception management
+
+## License
+
+MIT License
 
 ## Add your files
 
@@ -15,7 +59,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.vaultcloud.xyz/aaron.gruber/linux-scripts.git
+git remote add origin https://gitlab.vaultcloud.xyz/aarongruber/linux-health-checks.git
 git branch -M main
 git push -uf origin main
 ```
