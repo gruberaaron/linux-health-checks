@@ -17,9 +17,9 @@ A collection of scripts and tools for performing health checks on Linux systems.
    cd linux-health-checks
    ```
 
-2. Run the main health check script:
+2. Run the appropriate script for your operating system:
    ```sh
-   ./health-check.sh
+   python3 rocky_health_check.py
    ```
 
 3. Review the output and logs for any detected issues.
@@ -29,6 +29,7 @@ A collection of scripts and tools for performing health checks on Linux systems.
 - Bash (or compatible shell)
 - Standard Linux utilities (e.g., `top`, `df`, `free`, `netstat`)
 - Sudo privileges may be required for some checks
+- Python 3
 
 ## Customization
 
